@@ -1,5 +1,3 @@
-// import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
 export function labelEl() {
   class Label extends HTMLElement {
     constructor() {
@@ -9,22 +7,34 @@ export function labelEl() {
     render() {
       var shadow = this.attachShadow({ mode: "open" });
       var style = document.createElement("style");
-      style.textContent = ``;
+      style.textContent = `
+      .root {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .label {
+        font-size: 20px;
+      }
+
+      .input {
+        margin-top:10px;
+        height: 40px;
+        font-size: 18px;
+      }
+      `;
       shadow.appendChild(style);
 
-      // const type = this.getAttribute("type");
-      // var button = document.createElement("button");
+      var div = document.createElement("div");
+      div.classList.add("root");
+      const nameLabel = this.getAttribute("type");
 
-      // if (type == "default") {
-      //   button.classList.add("default");
-      //   button.textContent = this.textContent;
-      // }
-      // if (type == "outlined") {
-      //   button.classList.add("outlined");
-      //   button.textContent = this.textContent;
-      // }
+      div.innerHTML = `
+      <label class="label">${nameLabel}</label>
+      <input class="input" type="text" placeholder="Ingrese su ${nameLabel}"/>
+      `;
 
-      // shadow.appendChild();
+      shadow.appendChild(div);
     }
   }
   customElements.define("custom-label", Label);

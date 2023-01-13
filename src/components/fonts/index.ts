@@ -19,13 +19,14 @@ export function fontsEl() {
         }
         
         .subtitle {
-            margin: 60px 20px;
-            color: purple;
-            font-size: 38px;
+          color: purple;
+          font-size: 38px;
+          font-weight: bold;
         }
         
-        .ninguna {
-            font-size: 18px;
+        .large {
+          font-size: 22px;
+          font-weight: medium;
         }
         `;
       shadow.appendChild(style);
@@ -39,6 +40,10 @@ export function fontsEl() {
       }
       if (type == "subtitle") {
         font.classList.add("subtitle");
+        font.textContent = this.textContent;
+      }
+      if (type == "large") {
+        font.classList.add("large");
         font.textContent = this.textContent;
       }
 

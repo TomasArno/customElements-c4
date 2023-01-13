@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom elements | Cap 4</title>
     <link rel="stylesheet" href="./index.css" />
-    <script type="module" src="./index.ts"></script>
+    <script defer type="module" src="./index.ts"></script>
   </head>
   <body>
     <custom-header></custom-header>
+    <div class="label-container">
+      <custom-label type="name"></custom-label>
+    </div>
     <custom-fonts type="title">Titulo de la pagina</custom-fonts>
+    <custom-fonts type="large">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis nisi
+      harum laborum dolore quia illum fugiat eius porro, magnam quisquam et
+      quasi amet animi voluptatibus distinctio expedita, quos atque!
+    </custom-fonts>
     <custom-fonts type="subtitle">Subtitulo</custom-fonts>
     <custom-button type="default">Enviar!</custom-button>
     <custom-button type="outlined">Volver</custom-button>
